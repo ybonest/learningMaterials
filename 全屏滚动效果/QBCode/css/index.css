@@ -1,0 +1,642 @@
+#fp-nav {
+    position: fixed;
+    z-index: 100;
+    margin-top: -32px;
+    top: 50%;
+    opacity: 1;
+    -webkit-transform: translate3d(0,0,0);
+}
+#fp-nav.right {
+    right: 17px;
+}
+#fp-nav.left {
+    left: 17px;
+}
+.fp-slidesNav{
+    position: absolute;
+    z-index: 4;
+    opacity: 1;
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    left: 0 !important;
+    right: 0;
+    margin: 0 auto !important;
+}
+.fp-slidesNav.bottom {
+    bottom: 17px;
+}
+.fp-slidesNav.top {
+    top: 17px;
+}
+#fp-nav ul,
+.fp-slidesNav ul {
+    margin: 0;
+    padding: 0;
+}
+#fp-nav ul li,
+.fp-slidesNav ul li {
+    display: block;
+    width: 14px;
+    height: 13px;
+    margin: 7px;
+    position:relative;
+}
+.fp-slidesNav ul li {
+    display: inline-block;
+}
+#fp-nav ul li a,
+.fp-slidesNav ul li a {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li a.active span,
+#fp-nav ul li:hover a.active span,
+.fp-slidesNav ul li:hover a.active span{
+    height: 12px;
+    width: 12px;
+    margin: -6px 0 0 -6px;
+    border-radius: 100%;
+}
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    height: 4px;
+    width: 4px;
+    border: 0;
+    background: #333;
+    left: 50%;
+    top: 50%;
+    margin: -2px 0 0 -2px;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+#fp-nav ul li:hover a span,
+.fp-slidesNav ul li:hover a span{
+    width: 10px;
+    height: 10px;
+    margin: -5px 0px 0px -5px;
+}
+#fp-nav ul li .fp-tooltip {
+    position: absolute;
+    top: -2px;
+    color: #fff;
+    font-size: 14px;
+    font-family: arial, helvetica, sans-serif;
+    white-space: nowrap;
+    max-width: 220px;
+    overflow: hidden;
+    display: block;
+    opacity: 0;
+    width: 0;
+    cursor: pointer;
+}
+#fp-nav ul li:hover .fp-tooltip,
+#fp-nav.fp-show-active a.active + .fp-tooltip {
+    -webkit-transition: opacity 0.2s ease-in;
+    transition: opacity 0.2s ease-in;
+    width: auto;
+    opacity: 1;
+}
+#fp-nav ul li .fp-tooltip.right {
+    right: 20px;
+}
+#fp-nav ul li .fp-tooltip.left {
+    left: 20px;
+}
+#fullpage .section{
+    /*float: left;*/
+}
+
+/*第一屏*/
+#fullpage .section-one{
+    position: relative;
+    background-image: url("../image/qbh-title-bg.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+#fullpage .title-name{
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    bottom: 510px;
+    animation: movetitle 1.5s ease infinite;
+}
+@keyframes movetitle {
+    0%{
+        bottom: 490px;
+    }
+    50%{
+        bottom: 510px;
+    }
+    100%{
+        bottom: 490px;
+    }
+}
+
+#fullpage .title-sofa{
+    position: absolute;
+    left: 50%;
+    margin-left: -197px;
+    bottom: 350px;
+    animation: movesofa 1.5s ease-in-out infinite;
+}
+
+@keyframes movesofa {
+    0%{
+        bottom: 330px;
+    }
+    50%{
+        bottom: 350px;
+    }
+    100%{
+        bottom: 330px;
+    }
+}
+.goCell{
+    position: fixed;
+    z-index: 100;
+    right: 40px;
+    top: 40px;
+}
+#fullpage .section-two{
+    position: relative;
+    background-image: url("../image/qbh-list-bg.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.section-two .list-title{
+    /*background-color: red;*/
+    position: absolute;
+    bottom: 550px;
+    height: 27px;
+    width: 363px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.list-title img{
+    position: absolute;
+}
+.section-two .list-worda{
+    display: block;
+}
+.section-two .list-wordb{
+    display: none;
+}
+.section-two .list-sofa-content{
+    position: absolute;
+    height:500px;
+    width: 600px;
+    bottom: 0px;
+    left: 50%;
+    /*background-color: rgba(0,0,0,.5);*/
+    transform: translateX(-50%);
+    /*overflow-x:hidden;*/
+    z-index: 200;
+}
+.section-two .list-sofa-right{
+    position: absolute;
+    height: 45px;
+    width: 222px;
+    right: -260px;
+    top: 150px;
+    background-image: url("../image/qbh-list-search-box.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+    /*background-position: 20px 10px;*/
+    /*transform:scale(0.7,0.7);*/
+}
+.section-two .list-sofa-font{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    display: none;
+}
+.section-two .list-sofa-more{
+    position: absolute;
+    /*left: 50%;*/
+    /*transform:scale(0.2,0.2);*/
+    /*top:0px;*/
+    bottom: 210px;
+    right: 80px;
+    height: 0px;
+    width: 0px;
+
+    /*display: none;*/
+    /*animation: list-sofas-animte 1s linear;*/
+}
+.section-two .list-sofa-finish{
+    position: absolute;
+    right:200px;
+    height: 45px;
+    top: 150px;
+    display: none;
+
+}
+/*.right-move{*/
+    /*animation: list-sofa-right-move 1s linear*/
+/*}*/
+/*@keyframes list-sofa-right-move {*/
+    /*from{*/
+        /*right:200px;*/
+        /*top: 150px;*/
+    /*}*/
+    /*to{*/
+        /*right:20px;*/
+        /*top:15px;*/
+        /*transform:scale(0.6,0.6);*/
+    /*}*/
+/*}*/
+#fullpage .section-three{
+    position: relative;
+}
+#fullpage .section-three .section-three-inner{
+    position: absolute;
+    height: 500px;
+    width: 700px;
+    background-image: url("../image/qbh-buy-main-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 50%;
+    margin-left: -350px;
+    top: 50%;
+    margin-top: -250px;
+}
+.section-three .buy-choose-rightO{
+    position: absolute;
+    bottom: 115px;
+    right: 16px;
+}
+.section-three .buy-choose-rightT{
+    position: absolute;
+    bottom: 115px;
+    right: 16px;
+    display: none;
+}
+/*.section-three .buy-choose-sofa{*/
+    /*position: absolute;*/
+    /*bottom: 250px;*/
+    /*left: 33%;*/
+/*}*/
+
+/*.section-three .buy-choose-sofa{*/
+    /*position: absolute;*/
+    /*bottom: 700px;*/
+    /*left: 26%;*/
+    /*height:100px;*/
+    /*width:155px;*/
+/*}*/
+
+.section-three .buy-buy-sofaS{
+    position: absolute;
+    bottom: 5px;
+    right: 90px;
+}
+.section-three .buy-buy-sofaE{
+    position: absolute;
+    bottom: 5px;
+    right: 90px;
+    display: none;
+}
+.section-two .zong-sofa{
+    position: absolute;
+    bottom: 340px;
+    right: 306px;
+    width: 100px;
+    display: none;
+    z-index: 1000;
+}
+
+.section-four{
+    position: relative;
+    background-image: url("../image/qbh-info-bg.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.section-four .four-yun-one{
+    position: absolute;
+    top: 0px;
+    animation: four-yun-moveO 13s linear infinite;
+}
+.section-four .four-yun-two{
+    position: absolute;
+    top: 0px;
+    left: -10px;
+    animation: four-yun-moveO 13s linear infinite;
+}
+@keyframes four-yun-moveO {
+    0% {
+        left: 0px;
+    }
+    50% {
+        left: 500px;
+    }
+    100% {
+        left: 0px;
+    }
+}
+@keyframes four-yun-moveT {
+    0% {
+        left: 0px;
+    }
+    50% {
+        left: 600px;
+    }
+    100% {
+        left: 0px;
+    }
+}
+
+.section-four .qbh-info-worda{
+    position: absolute;
+    top: 120px;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.section-four .qbh-info-wordb{
+    position: absolute;
+    top: 120px;
+    left:50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+.section-four .qbh-info-cart{
+    position: absolute;
+    bottom: 50px;
+    left:50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+}
+
+.section-four .qbh-info-address-box{
+    width: 283px;
+    height: 270px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 215px;
+    background: url("../image/qbh-info-address-box.png");
+    display:none;
+}
+
+.section-four .qbh-info-address{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 60px;
+}
+
+.section-five{
+    position: relative;
+    background-image: url("../image/qbh-payment-bg.png");
+}
+.section-five .paycard{
+    position: absolute;
+    right: 710px;
+    bottom: 56px;
+    width: 358px;
+    height: 500px;
+    /* background-color: red; */
+}
+.section-five .qbh-payment-cards{
+    position: absolute;
+    bottom: 125px;
+    right: 0;
+    z-index: 4;
+}
+.section-five .qbh-payment-bill{
+    position: absolute;
+    left: 100px;
+    /* top: 54px; */
+    top:160px;
+}
+.section-five .qbh-info-rotate-sofa{
+    position: absolute;
+    bottom: 8px;
+    right: 70px;    
+    display: none;
+}
+.section-five div.mouse{
+    position: absolute;
+    bottom: 210px;
+    right: 210px;
+    width: 205px;
+    height: 820px;
+}
+.section-five .mouse img{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.section-five div.hand{
+    position: absolute;
+    bottom: 0px;
+    right: 272px;
+    width: 170px;
+    height: 310px;
+    overflow: hidden;
+}
+.section-four .qbh-info-rotate-sofa{
+    position: absolute;
+    left:420px;
+    bottom: 0px;
+    /* left: 382px; */
+    /* bottom: -598px; */
+    z-index: 3;
+    display: none;
+}
+.section-five .qbh-payment-font{
+    position: absolute;
+    left: 280px;
+    top: 0px;
+}
+
+.section-six{
+    position: relative;
+    background-image: url(../image/qbh-delivery-bg.png);
+    background-repeat: no-repeat;
+    background-position: 25% bottom;
+    background-color: #85D9ED;
+}
+.section-six .qbh-delivery-box{
+    position: absolute;
+    right: 1240px;
+    bottom: 328px;
+    /* right: 840px;
+    bottom: 410px; */
+    z-index: 3;
+}
+.section-six .car{
+    position: absolute;
+    bottom: 0px;
+    left: 460px;
+}
+.section-six .qbh-delivery-deliveryman{
+    position: absolute;
+    width: 30px;
+    top: 52px;
+    right: 11px;
+    display: none;
+}
+.section-six .qbh-delivery-buyer{
+    display: none;
+    position: absolute;
+    right: 353px;
+    bottom: 116px;
+    width: 20px;
+}
+.section-six .tips{
+    position: absolute;
+    right: 645px;
+    bottom: 447px;
+    width: 308px;
+    height: 59px;
+}
+.section-six .tips img{
+    position: absolute;
+    top: 0px;
+}
+.section-six .qbh-delivery-font-end{
+    display: none;
+}
+.section-six .qbh-delivery-truck-font{
+    position: absolute;
+    /* display: none; */
+    opacity: 0;
+    top: -58px;
+    right: -10px;
+}
+.section-six .qbh-delivery-shouhuo{
+    position: absolute;
+    left: 746px;
+    bottom: 393px;
+    width: 0px;
+}
+.section-six .qbh-delivery-door{
+    position: absolute;
+    right: 284px;
+    bottom: 116px;
+    display: none;
+}
+.section-six .qbh-delivery-cloud-one{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    animation: cloudone 10s linear infinite;
+}
+.section-six .qbh-delivery-cloud-two{
+    position: absolute;
+    left: 40%;
+    top: 10%;
+    animation: cloudtwo 10s linear infinite;
+}
+@keyframes cloudone{
+    0%{
+        left: 0%;
+    }
+    50%{
+        left: 20%;
+    }
+    100%{
+        left: 0%;
+    }
+}
+@keyframes cloudtwo{
+    0%{
+        left: 40%;
+    }
+    50%{
+        left: 60%;
+    }
+    100%{
+        left: 40%;
+    }
+}
+.section-seven{
+    position: relative;
+    background-image: url(../image/qbh-appraise-bg.png);
+    background-position: center bottom;
+}
+.section-seven .main-star{
+    position: absolute;
+    top: 30.85%;
+    left: 28.62%;
+    /* width: 120px; */
+    width: 0;
+    height: 13px;
+    font-size: 0;
+    overflow: hidden;
+}
+.section-seven img{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+.section-seven .activeforimgwidth{
+    animation: imgwidth 3s 1s steps(5) forwards;
+}
+@keyframes imgwidth{
+    from{
+        width: 0px;
+    }
+    to{
+        width: 120px;
+    }
+}
+.section-eight{
+    position: relative;
+    background-image: url(../image/qbh-shopping-bg.png);
+}
+.section-eight .btn-buy{
+    position: absolute;
+    width: 390px;
+    height: 156px;
+    right: 50%;
+    margin-right: -195px;
+    bottom: 50%;
+}
+.section-eight .qbh-shopping-hands{
+    position: absolute;
+    display: none;
+}
+.section-eight .qhb-shopping-dong{
+    display: none;
+}
+.section-eight .qbh-shopping-again{
+    position: absolute;
+    right: 26%;
+    bottom: 57%;
+}
+.down{
+    position: fixed;
+    right: 6%;
+    bottom: 8%;
+    z-index: 1000;
+    animation: down-animate 1s linear infinite;
+}
+@keyframes down-animate{
+    0%{
+        bottom: 10%;
+    }
+    50%{
+        bottom: 8%;
+    }
+    100%{
+        bottom: 10%;
+    }
+}
